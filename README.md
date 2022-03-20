@@ -1,5 +1,7 @@
 # PercentileApp
 
+Test task from the Idea Platform company
+
 ### Table of Contents
 sections header to referance location f the topic  
 
@@ -31,7 +33,7 @@ to accomplish that 2 main Modules:
 
 * jar file located in the project folder
 * jdk 
-* json file with tickets
+* json file located in .\src\main\resources
 
 ---
 				
