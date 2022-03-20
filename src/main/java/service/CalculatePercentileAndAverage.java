@@ -1,3 +1,6 @@
+package service;
+
+import model.Ticket;
 import org.apache.commons.math3.stat.descriptive.rank.Percentile;
 
 import java.time.Duration;

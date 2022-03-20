@@ -1,3 +1,8 @@
+package main;
+
+import model.Ticket;
+import service.CalculatePercentileAndAverage;
+import service.TicketsParser;
 
 import java.io.BufferedReader;
 import java.io.IOException;

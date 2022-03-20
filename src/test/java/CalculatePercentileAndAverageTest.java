@@ -1,5 +1,7 @@
 import junit.framework.TestCase;
+import model.Ticket;
 import org.apache.commons.math3.stat.descriptive.rank.Percentile;
+import service.CalculatePercentileAndAverage;
 
 import java.time.Duration;
 import java.util.ArrayList;
