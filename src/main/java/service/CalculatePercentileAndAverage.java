@@ -1,9 +1,9 @@
 package service;
 
 import model.Ticket;
-import org.apache.commons.math3.stat.descriptive.rank.Percentile;
 
 import java.time.Duration;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -12,21 +12,36 @@ import java.util.List;
 public class CalculatePercentileAndAverage {
 
     /**
-     *   Take list of tickets and using the percentile class
-     *   after return 90th percentile of flight time
+     *   Take list of tickets, take distance in seconds into an array
+     *   after sort, find array element and return 90th percentile of flight time
      * @param tickets list tickets
+     * @param percentile num of percentile
      * @return 90-th percentile of flight time
      */
-    public static Duration getPercentile(List<Ticket> tickets) {
+    public static double getPercentile(List<Ticket> tickets, double percentile) {
         double[] arraySec = tickets
                 .stream()
                 .map(Ticket::getDuration)
                 .mapToDouble(Duration::getSeconds)
                 .toArray();
 
-        Percentile percentile = new Percentile();
-        percentile.setData(arraySec);
-        return Duration.ofSeconds((long) percentile.evaluate(90));
+        int index = (int) Math.ceil(percentile / 100.0 * arraySec.length);
+        Arrays.sort(arraySec);
+
+        return arraySec[index];
+    }
+
+    /**
+     *  Convert seconds to hours
+     * @param sec seconds into a double
+     * @return time in string format
+     */
+    public static String time(double sec){
+        long hour = (long) sec / 3600;
+        long minute = (long) sec / 60 % 60;
+        long second = (long) sec  % 60;
+
+        return String.format("%02d:%02d:%02d", hour, minute, second);
     }
 
     /**

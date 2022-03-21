@@ -25,6 +25,11 @@ public class Ticket {
     private int stops;
     private int price;
 
+    /**
+     *  distance between flights with Duration.class
+     *
+     * @return duration
+     */
     public Duration getDuration() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yy H:mm");
 

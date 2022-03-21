@@ -40,5 +40,4 @@ to accomplish that 2 main Modules:
 - json-simple
 - lombok
 - junit
-- commons-math3
 
